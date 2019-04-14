@@ -19,6 +19,12 @@ const GlobalStyle = createGlobalStyle`
       list-style: none;
     }
   }
+
+  a{
+    color: #3e3ca7;
+    font-weight: bold;
+    text-decoration: none;
+  }
 `;
 
 export default GlobalStyle;

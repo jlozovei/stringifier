@@ -1,40 +1,5 @@
 import styled from 'styled-components';
 
-export const StyledHeader = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff;
-  padding: 2rem;
-`;
-
-export const StyledTitle = styled.h1`
-  font-size: 2rem;
-  line-height: 1.32;
-  color: #323232;
-  text-decoration: overline;
-  margin: 0;
-`;
-
-export const StyledFooter = styled.footer`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff;
-  padding: 2rem;
-
-  p{
-    color: #323232;
-    font-size: 1.125rem;
-  }
-
-  a{
-    color: #3e3ca7;
-    font-weight: bold;
-    text-decoration: none;
-  }
-`;
-
 export const StyledContainer = styled.div`
   &.app{
     display: flex;
@@ -60,23 +25,42 @@ export const StyledContainer = styled.div`
 
 export const StyledPage = styled.div`
   &.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__input,
+    &__actions,
+    &__result{
+      width: 100%;
+    }
+
     &__input{
       margin-bottom: 2rem;
     }
 
     &__result{
       margin-top: 2rem;
+      min-height: 3.1875rem;
       padding: 1rem;
       border: 1px solid #323232;
+      border-radius: 3px;
       font-size: .875rem;
       line-height: 1.32;
       color: #323232;
       transition: all ease-in-out 210ms;
-      cursor: pointer;
 
-      &:hover{
-        border-color: #3e3ca7;
-        outline: none;
+      &--unavailable{
+        cursor: not-allowed;
+      }
+
+      &--available{
+        cursor: pointer;
+
+        &:hover{
+          border-color: #3e3ca7;
+        }
       }
     }
   }
@@ -99,3 +83,45 @@ export const StyledMenu = styled.nav`
   }
 `;
 
+export const StyledHeader = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 2rem;
+  color: #323232;
+  text-align: center;
+
+  h1{
+    font-size: 2rem;
+    line-height: 1.32;
+    text-decoration: overline;
+    margin: 0;
+    transition: color ease-in-out 120ms;
+
+    &:hover{
+      color: #3e3ca7;
+    }
+  }
+
+  p{
+    font-size: 1rem;
+    line-height: 1.63;
+    margin: .75rem 0;
+  }
+`;
+
+export const StyledFooter = styled.footer`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 2rem;
+
+  p{
+    color: #323232;
+    font-size: 1.125rem;
+  }
+`;

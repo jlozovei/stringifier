@@ -27,12 +27,36 @@ export const StyledInput = styled.input`
   width: 100%;
   padding: 1rem;
   border: 1px solid #323232;
+  border-radius: 3px;
   font-size: .875rem;
   color: #323232;
-  transition: all ease-in-out 210ms;
+  transition: all ease-in-out 120ms;
 
   &:focus{
     border-color: #3e3ca7;
     outline: none;
+  }
+`;
+
+export const StyledSnackbar = styled.div`
+  &.snackbar{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: .875rem;
+    background-color: #323232;
+    border-radius: 3px;
+    font-size: .875rem;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1.32;
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease-in-out 210ms;
+
+    &--active{
+      opacity: 1;
+      visibility: visible;
+    }
   }
 `;
